@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//files upload and delete
+// Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::post('store', [HomeController::class, 'store'])->name('store');
+// Route::get('delete', [HomeController::class, 'delete'])->name('delete');
+
+//file manipulation
+Route::get("/", [HomeController::class, "index"])->name("home");
+Route::get("test", [HomeController::class, "test"])->name("test");
